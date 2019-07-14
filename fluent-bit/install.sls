@@ -4,5 +4,7 @@
 {% from "fluent-bit/map.jinja" import fluent_bit with context %}
 
 fluent-bit-pkg:
-  pkg.latest:
+  pkg.installed:
+    - refresh: False
     - name: {{ fluent_bit.pkg }}
+    - version: '0.12.0.alpha'
